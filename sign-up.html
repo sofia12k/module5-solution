@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Sign Up for the Newsletter</h2>
+  <form name="signUpCtrl.signUpForm" ng-submit="signUpCtrl.submitForm()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" class="form-control" ng-model="signUpCtrl.user.firstName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" class="form-control" ng-model="signUpCtrl.user.lastName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" ng-model="signUpCtrl.user.email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" class="form-control" ng-model="signUpCtrl.user.phoneNumber" required>
+    </div>
+
+    <div class="form-group">
+      <label for="favoriteDishNumber">Favorite Dish Number:</label>
+      <input type="text" id="favoriteDishNumber" class="form-control" ng-model="signUpCtrl.favoriteDishNumber" required>
+      <span ng-if="signUpCtrl.favoriteDishError" class="text-danger">{{signUpCtrl.favoriteDishError}}</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div ng-if="signUpCtrl.successMessage" class="alert alert-success">{{signUpCtrl.successMessage}}</div>
+  </form>
+</div>
