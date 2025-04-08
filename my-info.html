@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Your Information</h2>
+  <div ng-if="myInfoCtrl.user.firstName">
+    <p><strong>Name:</strong> {{myInfoCtrl.user.firstName}} {{myInfoCtrl.user.lastName}}</p>
+    <p><strong>Email:</strong> {{myInfoCtrl.user.email}}</p>
+    <p><strong>Phone:</strong> {{myInfoCtrl.user.phoneNumber}}</p>
+
+    <h3>Favorite Dish</h3>
+    <p>{{myInfoCtrl.user.favoriteDish.name}}</p>
+    <p>{{myInfoCtrl.user.favoriteDish.description}}</p>
+    <img ng-src="{{myInfoCtrl.user.favoriteDish.imageUrl}}" alt="Favorite Dish" class="img-responsive">
+  </div>
+
+  <div ng-if="!myInfoCtrl.user.firstName">
+    <p>Not Signed Up Yet. <a ui-sref="public.signUp">Sign Up Now!</a></p>
+  </div>
+</div>
